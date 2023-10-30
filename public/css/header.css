@@ -46,6 +46,7 @@
 
 .background {
     background-image: url('/images/img/bg-main.jpg');
+    background-color: #0c214a;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
