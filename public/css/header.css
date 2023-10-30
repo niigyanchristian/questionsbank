@@ -1,0 +1,67 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: #0c214a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header.sticky{
+    border-bottom: .1rem solid rgba(0,0,0,.2);
+}
+
+.logo{
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+    cursor: default;
+    padding-left: .5rem;
+}
+.navbar a{
+    font-size: 1.2rem;
+    color: #fff;
+    margin-left: 4rem;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: grey;
+}
+
+#menu-icon{
+    font-size: 2rem;
+    color: #fff;
+    display: none;
+}
+
+.parallax {
+    height: 70vh; /* Adjust the height to your preference */
+    overflow: hidden;
+    position: relative;
+}
+
+.background {
+    background-image: url('/images/img/bg-main.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%; /* Same height as the parallax container */
+    position: fixed;
+}
+
+.content {
+    /* padding: 20px; */
+    position: relative;
+    z-index: 1; /* Ensure content appears above the background image */
+    background-color: rgba(255, 255, 255, 0.95); /* Use rgba to set a slightly transparent white background */
+}
+/* .multiple-text{
+    color: #c8880c;
+} */
+.typed-cursor {
+    color: #0c214a;
+}

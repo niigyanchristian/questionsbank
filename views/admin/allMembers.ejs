@@ -1,0 +1,207 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/output.css">
+        <link rel="stylesheet" href="/css/sidebar.css">
+        <link rel="stylesheet" href="/css/allMembers.css">
+        <link rel="shortcut icon" type="image/png" href="/images/img/main_logo_1.png">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+        
+        <title>QBank</title>
+        <style>
+        .bell_icon:hover .notif_menu{
+            display: block;
+        }
+        .scale-bg:hover{
+            transform: scale(1.2);
+        }
+        </style>
+    </head>
+<body>
+    <div class="overflow-x-hidden">
+        <nav class="sidebar close border-r-2 border-gray-300 transition-all duration-300">
+            <header>
+                <div class="image-text">
+                    <p class="m-5"><img class="w-10 h-10" src="/images/img/main_logo_1.png">Welcome </p>
+                </div>
+                <i class='bx bx-chevron-right toggle_2'></i>
+            </header>
+    
+            <div class="menu-bar">
+                <div class="menu">                    
+                    <ul class="menu-links">
+                        <li class="nav-link lg:hidden">
+                            <a href="/">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-link lg:hidden">
+                            <a href="#courses">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Courses</span>
+                            </a>
+                        </li>
+                        <li class="nav-link lg:hidden">
+                            <a href="#departments">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Departments</span>
+                            </a>
+                        </li>
+                        <div class="text-xs ml-5 text-gray-500 my-4 font-bold">Admin Privileges</div>
+                        <p class="text-sm ml-5 text-gray-500 my-4 font-bold">Login as admin</p>
+                        <li class="nav-link mt-28">
+                            <a href="/login">
+                                <i class='bx bxs-book-content icon'></i>
+                                <span class="text nav-text">Admin Login</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="/logout">
+                            <i class='bx bx-log-out icon' ></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+    
+                </div>
+            </div>
+    
+          </nav>
+        <section class="home wrapper bg-black " id="blur">
+            <nav class="flex justify-between lg:justify-evenly align-middle bg-transparent absolute w-full items-center" >
+                <div class="flex items-center ">
+                    <span class="toggle_1a mr-10 bg-gray-100 hover:bg-gray-200 p-2 rounded-full hidden lg:block text-3xl text-gray-800 cursor-pointer mx-2">
+                        <i class='bx bx-chevron-right toggle_2'></i>
+                    </span>
+                    <div class="py-5 px-7 text-gray-100">
+                        <a href="/admin"><img class="w-20 h-20" src="/images/img/main_logo_1.png"></a>
+                    </div>
+                </div>
+                <span class="toggle_1 z-[60] block lg:hidden text-3xl text-gray-100 cursor-pointer mx-2">
+                    <ion-icon name="menu"></ion-icon>
+                </span>
+                <div class="hidden lg:flex justify-between w-1/2 transition-all ease-in duration-500">
+                    <div class=" space-x-10 text-gray-100">
+                        <a href="/" class="text-gray-100 font-semibold hover:text-gray-300">Home</a>
+                        <a href="./admin" class="text-gray-100 font-semibold hover:text-gray-300">Courses</a>
+                        <a href="./admin" class="text-gray-100 font-semibold hover:text-gray-300">Departments</a>
+                    </div>
+                    <div class="">
+                        <a href="/admin/members" class="text-gray-100 font-semibold hover:text-gray-300 mx-2">All Users</a>
+                    </div>
+                </div>           
+            </nav>
+            <div class="flex justify-center align-middle items-center" style="background-image: linear-gradient(rgba(2, 7, 21, 0.609), rgba(6, 1, 11, 0.765)
+                ), url('/images/img/legon-premier.jpeg'); background-position: center; background-size: cover; height: 50vh;" >
+                <div class="mt-[20vh] flex flex-col w-4/5 md:w-1/2">
+                    <div class="relative flex flex-col sm:flex-row sm:justify-start sm:m-5">
+                        <input type="search" id="searchInput" class="w-full p-4 focus:outline-none" placeholder="search for people...">
+                        <span style="top:-3.5%; right:-3%; padding-top: 15px; padding-bottom: 15px" class="absolute hover:bg-secondary cursor-pointer px-10 bg-primary border-primary"><i class=' bx bx-search text-3xl text-gray-100'></i></span>
+                
+                    </div>
+                </div>
+            </div>
+                <div class="mx-3 sm:mx-10 md:mx-20 lg:mx-40 h-full">
+                    <div class="flex justify-between mx-3 sm:mx-4 md:mx-10 lg:mx-20 mt-10 py-4 border-b border-primatext-primary">
+                        <p class="text-3xl text-gray-900 mx-5">Admins</p>
+                    </div>
+                    <ul class="mx-3 sm:mx-8 md:mx-16 lg:mx-20">
+                        <% users.forEach((user)=>{ %>
+                            <%if(user.admin){%>
+
+                                <li class="border-b border-gray-300 h-auto items-center rounded px-2" data-search="<%= user.username %>">
+                                    <div class="md:flex justify-between">
+                                        <div class="mx-2 my-2 text-gray-800">
+                                            <%if(user._id == profile){%>
+                                                <p class="align-middle"><i class='bx bxs-user-circle text-5xl align-middle'></i><%=user.username%> (You)</p>
+                                                <% }else{%>
+                                                <p class="align-middle"><i class='bx bxs-user-circle text-5xl align-middle'></i><%=user.username%></p>
+                                            <%}%>
+                                            </div>     
+                                        <div class="flex space-x-2 text-sm my-5">
+                                            <button><a onclick="admin_popup(this, <%= JSON.stringify(user) %>,<%= JSON.stringify(profile) %>)" class=" border border-blue-100 hover:text-white align-middle text-primary cursor-pointer p-2 rounded hover:bg-secondary">Unmake Admin</a></button>
+                                        </div>  
+                                    </div>
+                                </li>
+                                <%}%>
+                        <% }) %>
+                    </ul>
+                    <div class="flex justify-between items-center align-middle mx-3 sm:mx-4 md:mx-10 lg:mx-20  mt-20 py-4 border-b border-primary">
+                        <p class="text-3xl text-gray-900 mx-5">Students</p>
+                        <p><%=studentsNumber%> students</p>
+                    </div>
+                    <ul class="mx-3 sm:mx-8 md:mx-16 lg:mx-20 mb-10">
+                        <% users.forEach((user)=>{ %>
+                            <%if(!user.admin){%>
+                        <li class="border-b border-gray-300 h-auto items-center rounded px-2" data-search="<%= user.username %>">
+                            <div class="md:flex justify-between">
+                                <div class="mx-2 my-2 text-gray-800">
+                                    <%if(user._id == profile){%>
+                                        <p class="align-middle"><i class='bx bxs-user-circle text-5xl align-middle'></i><%=user.username%> (You)</p>
+                                        <% }else{%>
+                                        <p class="align-middle"><i class='bx bxs-user-circle text-5xl align-middle'></i><%=user.username%></p>
+                                    <%}%>
+                                </div>     
+                                <div class="flex space-x-2 text-sm my-5">
+                                    <button><a onclick="admin_popup(this, <%= JSON.stringify(user),JSON.stringify( profile) %>)" class="make_admin border align-middle text-primary hover:text-white cursor-pointer p-2 rounded hover:bg-primary border-primary">Make Admin</a></button>
+                                </div>  
+                            </div>
+                        </li>
+                        <%}%>
+                        <% }) %>
+                    </ul>   
+                </div>
+            </div>
+            <%-include('../partials/footer')%>
+            <!-- <footer class=" bg-primaborder-primary h-auto">
+                <div class=" text-white pt-4 md:pt-8 lg:pt-12">
+                    <div class=" h-auto flex justify-around align-middle items-center">
+                        <a href="/admin" class="flex items-center text-3xl text-center"><img class="w-10 h-10 mx-2" src="images/img/main_logo_1.png">Engineering Hub</a>
+                        <div class="flex flex-col mt-12 md:mt-0 md:flex-row">
+                            <a href="/admin" class="my-2 md:mx-10 hover:text-gray-100 transition-all">Home</a>
+                            <a href="#" class="my-2 md:mx-10 hover:text-gray-100 transition-all">Courses</a>
+                            <a href="#" class="my-2 md:mx-10 hover:text-gray-100 transition-all">Departments</a>
+                        </div>
+                    </div>    
+                    <p class=" text-right mt-10 mx-2 text-lg text-white">&copy;copyright De-General</p>
+                </div>
+            </footer> -->
+        </section>
+        <!-- Admin Popup-->
+        <div class="absolute md:mx-20 lg:mx-32 w-5/6 sm:w-2/3 md:w-1/2 bg-white border border-red-300 shadow-xl h-auto py-4 rounded-md" id="popup1">
+            <div class="flex justify-between mx-10 md:mx-20">
+                <h2 class="flex justify-center items-center text-xl text-gray-700">Admin</h2>
+                <a class="text-2xl text-gray-700 cursor-pointer" onclick="cancel_admin()">&times;</a>
+            </div>
+            <div class="flex justify-start mt-2">
+             <div class="m-1 w-4/5 mx-auto h-0.5 bg-gray-200 rounded-full inline-flex"></div>
+            </div>
+            <div class="flex justify-start mx-10 md:mx-20">
+                <p class="admin_text">Are you sure you want to remove<span> Person's name</span> from being an admin?<span class="block font-bold text-gray-700 text-center"><span>Person's name wouldn't have admin privileges</span></p>    
+            </div>
+            <div class="flex justify-end space-x-2 mr-10 text-sm my-5">
+                <button onclick="handelChange()"><a class="align-middle border border-blue-300 text-gray-500 hover:text-gray-100 cursor-pointer p-2 rounded hover:bg-primaborder-primary">Change</a></button>
+                <button onclick="cancel_admin()"><a class="border border-gray-400 align-middle text-gray-500 hover:text-white cursor-pointer p-2 rounded hover:bg-gray-600">cancel</a></button>
+            </div>
+        </div>   
+    </div>    
+    <script src="/js/members.js"></script>
+    <script src="/js/search.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

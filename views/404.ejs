@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Page Not Found</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+        body {
+            background: #f1f2f1;
+            display: flex;
+        }
+        
+        .error-message {
+            width: 95vw;
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+        }
+        
+        .error-message img {
+            width: 360px;
+            align-self: center;
+        }
+        
+        .error-message p {
+            font-family: "Luckiest Guy", cursive;
+            user-select: none;
+            font-size: 30px;
+            color: #ff3a3aa3;
+            align-self: center;
+        }
+        
+        .other-links {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            justify-content: center;
+            margin: 15px;
+        }
+        
+        .other-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 2.75vw;
+            border:0;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+            border-radius: 30px;
+            background: #819dcae0;
+        }
+        
+        .other-links p {
+            text-align: center;
+            user-select: none;
+            font-size: 2.75vw;
+        }
+        
+        @media only screen and (max-width: 525px) {
+            body {
+                flex-direction: column;
+            }
+            .other-links {
+                width: 100%;
+            }
+            .other-links p {
+                font-size: 25px;
+            }
+            .other-links a {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-message">
+        <p><%= message %></p>
+        <img src="/images/img/spiderman_img.png" alt="">
+    </div>
+    <div class="other-links">
+        <p>GoTo Links</p>
+        <hr>
+        <a href="#" onclick="goBack()">Go back</a>
+        <a href="/login">login</a>
+        <!-- <a href="/register">Register</a> -->
+
+    </div>
+
+</body>
+<script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+</html>

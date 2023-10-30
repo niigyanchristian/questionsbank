@@ -1,0 +1,56 @@
+.wrapper.delete_active{
+    filter: blur(2px); 
+    pointer-events: none;
+    user-select: none;
+  }
+
+.wrapper.admin_active {
+    filter: blur(2px); 
+    pointer-events: none;
+    user-select: none;
+  }
+  
+#popup1{
+position: fixed;
+top: 50%;
+left: 45%;
+transform: translate(-50%, -50%);
+visibility: hidden;
+opacity: 0;
+transition: 0.05s;
+}
+
+#popup2 {
+position: fixed;
+top: 50%;
+left: 45%;
+transform: translate(-50%, -50%);
+visibility: hidden;
+opacity: 0;
+transition: 0.05s;
+}
+
+#popup2.delete_active{
+top: 50%;
+visibility: visible;
+opacity: 1;
+transition: 0.05s;
+}
+
+#popup1.admin_active {
+top: 50%;
+visibility: visible;
+opacity: 1;
+transition: 0.05s;
+}
+
+@media (max-width:500px) {
+    #popup1{
+        left: 50%;
+    }
+        
+    #popup2 {
+        left: 50%;
+    }
+        
+}

@@ -1,0 +1,258 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/output.css">
+        <link rel="stylesheet" href="/css/sidebar.css">
+        <link rel="stylesheet" href="/css/admin_selected_course.css">
+        <link rel="shortcut icon" type="image/png" href="/images/img/main_logo_1.png">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+        
+        <title>QBank</title>
+        <style>
+        .bell_icon:hover .notif_menu{
+            display: block;
+        }
+        .scale-bg:hover{
+            transform: scale(1.2);
+        }
+        .delete_btn:hover{
+            background-color: white;
+            color: rgba(255, 0, 0, 0.848);
+        }
+        @media(max-width:500px){
+            .delete_txt{
+                padding: 0 30px;
+            }
+        }
+        </style>
+    </head>
+<body>
+    <div class="overflow-x-hidden">
+        <nav class="sidebar close border-r-2 border-gray-300 transition-all duration-300">
+            <header>
+                <div class="image-text">
+                    <p class="m-5"><img class="w-10 h-10" src="/images/img/main_logo_1.png">Welcome </p>
+                </div>
+                <i class='bx bx-chevron-right toggle_2'></i>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">                    
+                    <ul class="menu-links">
+                        <li class="nav-link lg:hidden">
+                            <a href="/">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-link lg:hidden">
+                            <a href="#courses">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Courses</span>
+                            </a>
+                        </li>
+                        <li class="nav-link lg:hidden">
+                            <a href="#departments">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Departments</span>
+                            </a>
+                        </li>
+                        <div class="text-xs ml-5 text-gray-500 my-4 font-bold">Admin Privileges</div>
+                        <li class="nav-link">
+                            <a href="/admin/members">
+                                <i class='bx bxs-book-content icon'></i>
+                                <span class="text nav-text">All Users</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="/admin/addcourse">
+                                <i class='bx bx-book icon' ></i>
+                                <span class="text nav-text">Add a course</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="/admin/addpasco">
+                                <i class='bx bxs-bookmark-plus icon' ></i>
+                                <span class="text nav-text">Add past question</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="/logout">
+                            <i class='bx bx-log-out icon' ></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+
+                </div>
+            </div>
+
+        </nav>
+        <section class="home wrapper bg-black " id="blur">
+            <nav class="flex justify-between lg:justify-evenly align-middle items-center absolute w-full " >
+                <div class="flex items-center ">
+                    <span class="toggle_1a mr-10 bg-gray-100 hover:bg-gray-200 p-2 rounded-full hidden lg:block text-3xl text-gray-800 cursor-pointer mx-2">
+                        <i class='bx bx-chevron-right toggle_2'></i>
+                    </span>
+                    <div class="py-5 px-7 text-gray-100 text-xl">
+                        <a href="/"><img class="w-20 h-20" src="/images/img/main_logo_1.png"></a>
+                    </div>
+                </div>
+                <span class="toggle_1 z-[60] block lg:hidden text-3xl text-gray-100 cursor-pointer mx-2">
+                    <ion-icon name="menu"></ion-icon>
+                </span>
+                <div class="hidden lg:flex justify-between w-1/2 transition-all ease-in duration-500">
+                    <div class=" space-x-10 text-gray-100">
+                        <a href="/" class="text-gray-100 font-semibold hover:text-gray-300">Home</a>
+                        <a href="#admin" class="text-gray-100 font-semibold hover:text-gray-300">Courses</a>
+                        <a href="#admin" class="text-gray-100 font-semibold hover:text-gray-300">Departments</a>
+                    </div>
+                    <div class="">
+                        <!-- <a class=" mx-2" href="/register">Sign up</a>|
+                        <a class=" mx-2" href="/login">Sign in</a> -->
+                    </div>
+                </div>           
+            </nav>
+            <div class="flex justify-center align-middle items-center md:items-start " style="background-image: linear-gradient(rgba(2, 7, 21, 0.609), rgba(6, 1, 11, 0.765)
+                ), url('/images/img/legon-premier.jpeg'); background-position: center; background-size: cover; height: 60vh; background-color: rgba(21, 18, 18, 0.677);" >
+                <div class="flex flex-col w-4/5 md:w-1/2 mt-[15vh] md:mt-[20vh]">
+                    <div class=" text-white text-center text-3xl md:text-5xl" style="margin:20px 0;"><%=courseName%>(<%=courseCode%>)</div>
+                    <div class="relative flex-col sm:flex-row sm:justify-start sm:m-5">
+                    <input type="search" id="searchInput" class="w-full p-[17px] md:p-5  focus:outline-none" placeholder="search books...">
+                    <span style="top:0%; right:-3%; padding-top: 14px;" class="absolute hover:bg-secondary cursor-pointer px-5 md:px-10 pb-[20px] md:pb-[16px] bg-primary"><i class=' bx bx-search text-2xl md:text-3xl text-gray-100'></i></span>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="md:flex justify-between m-10 align-middle items-center">
+                <p class="my-5 md:my-0 text-gray-800 text-2xl ">All available papers from previous years...</p>
+                <a href="/admin/editcourse/<%=courseId%>" class="ml-auto p-2 bg-primary border border-secondary rounded m-4 cursor-pointer text-white hover:bg-secondary">Edit Course</a>
+            </div>
+            
+            <div class="mx-10 mb-4 flex flex-wrap">
+                <% pascos.forEach((pasco)=>{ %>
+                <div class="w-full sm:w-1/3 md:w-1/4 h-1/2 m-6 border border-gray-300" data-search="<%= pasco.name %> <%= pasco.code %> <%= pasco.examiner %> <%= pasco.year %> <%= pasco.semester %>">
+                    <div class="h-1/3  flex justify-center bg-gray-800">
+                        <a href="<%=pasco.pdf%>" target="_blank">
+                            <img class="scale-bg transition-all duration-300 w-32 h-32 m-10" src="/images/img/pdf.png">
+                        </a>
+                    </div>
+                    <div class=" h-2/3 pb-5 m-2 text-gray-700 text-base space-y-2">
+                        <div class="text-lg flex justify-between items-center border-b border-gray-300">
+                            <h3><%=pasco.name%></h3>
+                            <div class="relative three-dots h-5 m-2">
+                                <span class="block text-3xl text-gray-700 cursor-pointer rounded-full hover:bg-gray-300 ">
+                                <i class='bx bx-dots-vertical-rounded text-3xl'></i>
+                                </span>
+                                <div class="hidden absolute left-4 -bottom-2 w-32 bg-gray-100 shadow-lg rounded p-1 space-y-2 three-menu">
+                                    <a href="/admin/editpasco/<%=pasco._id%>" class="cursor-pointer text-gray-600 block hover:bg-primary hover:text-gray-100 mx-auto p-1 rounded">Edit</a>
+                                    <a onclick="delete_popup(`<%=pasco._id%>`)" class="cursor-pointer  text-gray-600 block hover:bg-red-400 hover:text-gray-100 mx-auto p-1 rounded">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Course Code: <%=pasco.code%></p>
+                        <p>Examiner: <span><%=pasco.examiner%></span></p>
+                        <p>Year: <span><%=pasco.year%></span></p>
+                        <div class=" flex justify-between items-center align-middle">Semester:<span><%=pasco.semester%> Semester</span> <a href="<%=pasco.pdf%>" target="_blank" class=" underline hover:text-secondary text-left">View paper</a>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+            <div class="flex justify-end mr-10">
+                <a onclick="delete_popup(this)" class="delete_btn p-2 mr-2 bg-red-600 border border-red-700 rounded m-4 cursor-pointer text-white hover:bg-red-700" style="background-color: rgba(228, 16, 16, 0.804); color:white">Delete Course</a> 
+            </div>
+            <%- include('../partials/footer') %>
+        </section>
+        <!-- Delete Popup-->
+        <div class="absolute md:mx-20 lg:mx-32 w-2/3 md:w-1/2 bg-white border border-red-300 shadow-xl h-auto py-4 rounded-md" id="popup">
+            <div class="flex justify-between mx-5 sm:mx-10 md:mx-20">
+                <h2 class="flex justify-center items-center text-xl text-gray-700">Delete</h2>
+                <a class="text-2xl text-gray-700 cursor-pointer" onclick="cancel()">&times;</a>
+            </div>
+            <div class="flex justify-start mt-2">
+             <div class="m-1 w-4/5 mx-auto h-0.5 bg-gray-200 rounded-full inline-flex"></div>
+            </div>
+            <div class="mx-7 pl-7 md:px-14 md:mx-14">
+                <p class=" delete_txt" style="padding:0 65px;">Are you sure you want to delete<span class="font-bold mx-3 text-gray-800">File name?</span></p>
+                <p class=" delete_txt" style="padding:0 65px;">This document will be deleted</p>
+            </div>
+            <div class="flex justify-end space-x-2 mr-10 text-sm my-5">
+                <button id="delete-btn"><a class="align-middle border border-red-300 text-gray-500 hover:text-gray-100 cursor-pointer p-2 rounded hover:bg-red-400">Delete</a></button>
+                <button onclick="cancel()"><a class="border border-gray-400 align-middle text-gray-500 hover:text-gray-300 cursor-pointer p-2 rounded hover:bg-gray-500">cancel</a></button>
+            </div>
+        </div>   
+    </div>    
+    <script>
+        let id;
+        const cancel = () => {
+
+            let blur = document.querySelector('#blur');
+                blur.classList.toggle('delete_active');
+            let popup = document.querySelector('#popup');
+                popup.classList.toggle('delete_active');
+
+        }
+
+        const delete_popup = (value) => {
+            id=value;
+
+        let blur = document.querySelector('#blur');
+            blur.classList.toggle('delete_active');
+        let popup = document.querySelector('#popup');
+            popup.classList.toggle('delete_active');
+        }
+
+        const getUrl=()=>{
+            const url = window.location.href;
+            const regex = /\/courses\/([^\/]+)\/([^\/]+)/;
+            const match = url.match(regex);
+            const courseId = match[1];
+            return courseId
+        }
+     
+  const deleteBtn = document.getElementById('delete-btn');
+  
+  deleteBtn.addEventListener('click', () => {
+    cancel()
+        
+  const url = '/admin/delpasco';
+  const data = { pascoId: id, courseId: getUrl() };
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: new URLSearchParams(data).toString()
+  };
+
+  fetch(url, options)
+    .then(response => response.text())
+    .then(data => {
+        window.location.href = '/courses/'+getUrl();
+    })
+    .catch(error => console.error(error));
+  });
+  
+    </script>
+    <script src="/js/script.js"></script>
+    <script src="/js/search.js"></script>
+      
+</body>
+</html>

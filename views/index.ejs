@@ -1,0 +1,289 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/output.css">
+        <link rel="stylesheet" href="/css/sidebar.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="shortcut icon" type="image/png" href="/images/img/main_logo_1.png">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+        
+        <title>QBank</title>
+        <style>
+        .bell_icon:hover .notif_menu{
+            display: block;
+        }
+        </style>
+    </head>
+<body>
+    <div class="overflow-x-hidden">
+        <%if(admin){%>
+        <nav class="sidebar close border-r-2 border-gray-300 transition-all duration-300">
+            <header>
+                <div class="image-text">
+                    <p class="m-1 font-semibold text-gray-800 text-[18px]"><img class="w-10 h-10" src="images/img/main_logo_1.png">Welcome</p>
+                </div>
+                <i class='bx bx-chevron-right toggle_2'></i>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">                    
+                    <ul class="menu-links">
+                        <li class="nav-link lg:hidden">
+                            <a href="#faculty">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Faculty</span>
+                            </a>
+                        </li>
+                        <li class="nav-link lg:hidden">
+                            <a href="#courses">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Courses</span>
+                            </a>
+                        </li>
+                        <li class="nav-link lg:hidden">
+                            <a href="#departments">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Departments</span>
+                            </a>
+                        </li>
+                        <div class="text-xs ml-5 text-gray-500 my-4 font-bold">Admin Privileges</div>
+                        <li class="nav-link">
+                            <a href="/admin/members">
+                                <i class='bx bxs-book-content icon'></i>
+                                <span class="text nav-text">All Users</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="admin/addcourse">
+                                <i class='bx bx-book icon' ></i>
+                                <span class="text nav-text">Add a course</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="/admin/addpasco">
+                                <i class='bx bxs-bookmark-plus icon' ></i>
+                                <span class="text nav-text">Add past question</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="/logout">
+                            <i class='bx bx-log-out icon' ></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+
+                </div>
+            </div>
+            
+        </nav>
+        <%}%>
+        <section class="home bg-black overflow-x-hidden">
+            <header class="header">
+                <div style="display: flex; align-items: center;" class="text-gray-100 text-xl"><a href="./index.html">
+                    <img style="width: 3rem;" src="/images/img/main_logo_1.png">
+                    <a href="#" class="logo">Questions Bank</a>
+                </a>
+                </div>
+                
+        
+                
+        
+                <nav class="navbar">
+                    <!-- <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a> -->
+                    <!-- <div class="text-gray-100"> -->
+                        <%if(admin){%>
+                        <a  href="/admin/members">All Users</a>    
+                        <!-- <a class=" mx-2" href="/admin/members">All Users</a> -->
+                        <%}else{%>
+                            <%if(authenticated){%>
+                                <a  href="/logout">Logout</a> 
+                                <!-- <a class=" mx-2" href="/logout">Logout</a> -->
+                                <%}else{%>
+                                    <a href="/login">LogIn</a> 
+                                    <a class=" mx-2" href="/login">LogIn</a>
+                            <%}%>
+                        <%}%>
+                    <!-- </div> -->
+                </nav>
+            </header>
+            <!-- <nav class="flex justify-between lg:justify-evenly align-middle items-center absolute w-full" >
+                <div class="flex items-center ">
+                    <%if(admin){%>
+                    <span class="toggle_1a mr-10 bg-gray-100 hover:bg-gray-200 p-2 rounded-full hidden lg:block text-3xl text-gray-800 cursor-pointer mx-2">
+                        <i class='bx bx-chevron-right toggle_2'></i>
+                    </span>
+                    <%}%>
+                    <div class="py-1 px-7 text-gray-100 text-xl">
+                        <img class="w-20 h-20" src="images/img/main_logo_1.png">
+                    </div>
+                </div>
+                <span class="toggle_1 z-[60] block lg:hidden text-3xl text-gray-100 cursor-pointer mx-2">
+                    <ion-icon name="menu"></ion-icon>
+                </span>
+                <div class="hidden lg:flex justify-between w-1/2 transition-all ease-in duration-500">
+                    <div class=" space-x-10 text-gray-100">
+                        <a href="#faculty" class="text-gray-100 font-semibold hover:text-secondary">Faculty</a>
+                        <a href="#courses" class="text-gray-100 font-semibold hover:text-secondary">Courses</a>
+                        <a href="#departments" class="text-gray-100 font-semibold hover:text-secondary">Departments</a>
+                    </div>
+                    <div class="text-gray-100">
+                        <%if(admin){%>
+                        <a class=" mx-2" href="/admin/members">All Users</a>
+                        <%}else{%>
+                            <%if(authenticated){%>
+                                <a class=" mx-2" href="/logout">Logout</a>
+                                <%}else{%>
+                                    <a class=" mx-2" href="/login">LogIn</a>
+                            <%}%>
+                        <%}%>
+                    </div>
+                </div>           
+            </nav> -->
+            
+            <!-- <div class="background"></div>
+            <div class=" md:h-[80%]" style="z-index: 1; height: 70vh; overflow: hidden;
+            position: relative;">
+                <div class="flex justify-center h-2/3 w-full md:w-4/5">
+                    <div class="mt-[50%] sm:order-first w-full md:w-[90%] m-10" style="margin-top: 30vh;">
+                        <p class="flex justify-start text-[25px] sm:text-3xl md:text-4xl font-semibold px-4 py-2 text-white" id="heading">Get all the Materials you need online</p>
+                        <p class="flex justify-start text-[14px]  md:text-lg font-semibold px-4 text-white" id="heading">Quick and easy</p>
+                        <div class="relative flex-col sm:flex-row sm:justify-start w-[70%] sm:m-5 my-5 md:my-1 searchbox">
+                            <input type="search" id="searchInput" class="w-full p-[17px] md:p-5 focus:outline-none" placeholder="search books...">
+                            <span style="top:0%; right:-3%; padding-top: 14px;" class="absolute hover:bg-secondary cursor-pointer px-5 md:px-10 pb-[20px] md:pb-[16px] bg-primary" id="searchIcon"><i class=' bx bx-search text-2xl md:text-3xl text-gray-100'></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="parallax">
+                <div class="background"></div>
+                <div class=" md:h-[80%]" style="z-index: 1; height: 70vh; overflow: hidden;
+            position: relative;">
+                <div class="flex justify-center h-2/3 w-full md:w-4/5">
+                    <div class="mt-[50%] sm:order-first w-full md:w-[90%] m-10" style="margin-top: 30vh;">
+                        <p class="flex justify-start text-[25px] sm:text-3xl md:text-4xl font-semibold px-4 py-2 text-white" id="heading"><span class="multiple-text"></span></p>
+                        <p class="flex justify-start text-[14px]  md:text-lg font-semibold px-4 text-white" id="heading">Quick and easy</p>
+                        <div class="relative flex-col sm:flex-row sm:justify-start w-[70%] sm:m-5 my-5 md:my-1 searchbox">
+                            <input type="search" id="searchInput" class="w-full p-[17px] md:p-5 focus:outline-none" placeholder="search books...">
+                            <span style="top:0%; right:-3%; padding-top: 14px;" class="absolute hover:bg-secondary cursor-pointer px-5 md:px-10 pb-[20px] md:pb-[16px] bg-primary" id="searchIcon"><i class=' bx bx-search text-2xl md:text-3xl text-gray-100'></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            </div>
+            
+<div class="content">
+
+
+
+            <div  class="sm:flex justify-evenly py-2 bg-primary text-gray-100 font-semibold">
+                <div class=" flex align-middle items-center p-2">
+                    <i class='bx bx-book text-6xl'></i>
+                    <p class=" text-xl w-2/3 mx-2">Unloaded by the lecturers themselves</p>
+                </div>
+                <div class=" flex align-middle items-center p-2">
+                    <i class='bx bx-time-five text-6xl'></i>
+                    <p class=" text-xl w-2/3 mx-2">Find past questions fast and easily</p>
+                </div>
+                <div class=" flex align-middle items-center p-2">
+                    <i class='bx bx-like text-6xl'></i>
+                    <p class=" text-xl w-2/3 mx-2">Recommended For exams preparations</p>
+                </div>
+            </div>
+
+            <section  class="my-24 w-full md:mx-16 lg:mx-20">
+                <p class="w-full md:w-4/5 flex justify-center text-3xl md:text-4xl text-gray-600 font-medium" id="departments">Available Programs</p>
+                <div class=" flex flex-wrap justify-center md:justify-start mx-auto m-2 md:m-10">
+                    <a href="programs/cpen" class="w-4/5 sm:w-1/3 md:w-1/4 p-12 text-xl text-gray-100 text-center font-medium bg-primary hover:bg-secondary m-4 cursor-pointer">Computer Engineering</a>
+                    <a href="programs/biomed" class="w-4/5 sm:w-1/3 md:w-1/4 p-12 text-xl text-center text-gray-100 font-medium bg-primary hover:bg-secondary m-4 cursor-pointer">Biomedical Engineering</a>
+                    <a href="programs/agric" class="w-4/5 sm:w-1/3 md:w-1/4 p-12 text-xl text-center text-gray-100 font-medium bg-primary hover:bg-secondary m-4 cursor-pointer">Agricultural Engineering</a>
+                    <a href="programs/Food_Process" class="w-4/5 sm:w-1 md:w-1/4 p-12 text-xl text-center text-gray-100 font-medium bg-primary hover:bg-secondary m-4 cursor-pointer">Food Process Eng.</a>
+                    <a href="programs/materials" class="w-4/5 sm:w-1/3 md:w-1/4 p-12 text-xl text-center text-gray-100 font-medium bg-primary hover:bg-secondary m-4 cursor-pointer">Materials science & ENG.</a>
+                    <a class="w-4/5 sm:w-1/3 md:w-1/4 p-12 text-xl text-center text-gray-100 font-medium bg-primary hover:bg-secondary m-4 cursor-pointer">Other Programs</a>
+                </div>
+            </section>
+
+            <section  class="my-24 w-full md:mx-16 lg:mx-20">
+                <p class="w-full md:w-4/5 flex justify-center text-3xl md:text-4xl text-gray-600 font-medium" id="departments">Frequently accessed Courses</p>
+                <div class=" flex flex-wrap justify-center md:justify-start mx-auto m-2 md:m-10">
+                    <% courses.forEach((course)=>{ %>
+                    <a id="loads" href="courses/<%=course._id%>" class="w-4/5 sm:w-1/3 md:w-1/4 p-12 text-xl text-center text-gray-100 font-medium bg-primary hover:bg-secondary m-4 cursor-pointer" data-search="<%= course.name %> <%= course.code %>"><%=course.name%></a>
+                    <% }) %>
+                </div>
+            </section>
+
+            <section >
+                <p class="w-full flex justify-center text-3xl md:text-4xl text-gray-600 font-medium" id="faculty">Faculty</p>
+                <div class="m-2 sm:m-10 md:m-16">
+                    <div class="mx-auto sm:mx-4 md:mx-8 mt-2 h-1 w-full md:w-11/12 bg-primary rounded-full"></div>
+                    <div class="m-3 md:m-5">
+                        <p class="m-4 text-2xl md:text-3xl text-gray-700 font-bold">
+                            School of Engineering Sciences
+                        </p>
+                    </div>
+
+                    <div class="m-3 md:m-5 w-11/12 md:w-4/5 ">
+                        <p class="m-4 text-gray-800 text-xl">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo repudiandae reiciendis quos unde ipsam? Quia molestiae debitis natus delectus ad!
+                        </p>
+                    </div>
+                    <div class="mx-auto sm:mx-4 md:mx-8 mt-2 h-1 w-full md:w-11/12 bg-primary rounded-full"></div>
+                </div>
+                
+
+            </section>
+            <footer class=" bg-primary h-auto">
+                <div class=" text-white pt-4 md:pt-8 lg:pt-12">
+                    <div class=" h-auto flex justify-around align-middle items-center">
+                        <a href="./index.html" class="flex items-center text-3xl text-center"><img class="w-20 h-20 mx-2" src="images/img/main_logo_1.png">Engineering Questions Bank</a>
+                        <div class="flex flex-col mt-12 md:mt-0 md:flex-row">
+                            <a href="#" class="my-2 md:mx-10 hover:text-gray-100 transition-all">Faculty</a>
+                            <a href="#" class="my-2 md:mx-10 hover:text-gray-100 transition-all">Courses</a>
+                            <a href="#" class="my-2 md:mx-10 hover:text-gray-100 transition-all">Departments</a>
+                        </div>
+                    </div>    
+                    <p class=" text-right mt-10 mx-2 text-lg text-white">&copy;copyright De-General</p>
+                </div>
+            </footer>
+        </div>
+        </section>   
+    </div>    
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+      <!-- Scroll Reveal -->
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <!-- Typed -->
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script src="/js/animations.js"></script>
+      <script>
+        // teypedjs
+const typed = new Typed('.multiple-text',{
+    strings: ['Get all the Questions you need online'],
+    typeSpeed: 200,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
+})
+      </script>
+</body>
+</html>

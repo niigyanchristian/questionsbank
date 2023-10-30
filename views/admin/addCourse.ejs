@@ -1,0 +1,179 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/output.css">
+        <link rel="stylesheet" href="/css/sidebar.css">
+        <link rel="stylesheet" href="/css/addCourse.css">
+        <link rel="shortcut icon" type="image/png" href="/images/img/main_logo_1.png">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+        
+        <title>QBank</title>
+        <style>
+        .bell_icon:hover .notif_menu{
+            display: block;
+        }
+        </style>
+    </head>
+<body>
+    <div class="overflow-x-hidden">
+        <nav class="sidebar close border-r-2 border-gray-300 transition-all duration-300">
+            <header>
+                <div class="image-text">
+                    <p class="m-5"><img class="w-10 h-10" src="/images/img/main_logo_1.png">Welcome</p>
+                </div>
+                <i class='bx bx-chevron-right toggle_2'></i>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">                    
+                    <ul class="menu-links">
+                        <li class="nav-link lg:hidden">
+                            <a href="/admin">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-link lg:hidden">
+                            <a href="#courses">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Courses</span>
+                            </a>
+                        </li>
+                        <li class="nav-link lg:hidden">
+                            <a href="#departments">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Departments</span>
+                            </a>
+                        </li>
+                        <div class="text-xs ml-5 text-gray-500 my-4 font-bold">Admin Privileges</div>
+                        <li class="nav-link">
+                            <a href="/admin/members">
+                                <i class='bx bxs-book-content icon'></i>
+                                <span class="text nav-text">All Users</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="/admin/addcourse">
+                                <i class='bx bx-book icon' ></i>
+                                <span class="text nav-text">Add a course</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-link">
+                            <a href="/admin/addpasco">
+                                <i class='bx bxs-bookmark-plus icon' ></i>
+                                <span class="text nav-text">Add past question</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="/logout">
+                            <i class='bx bx-log-out icon' ></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+
+                </div>
+            </div>
+
+        </nav>
+        <section class="home bg-black">
+            <nav class="flex justify-between lg:justify-evenly bg-primary align-middle items-center" >
+                <div class="flex items-center ">
+                    <span class="toggle_1a mr-10 bg-gray-400 hover:bg-gray-300 p-2 rounded-full hidden lg:block text-3xl text-gray-100 cursor-pointer mx-2">
+                        <i class='bx bx-chevron-right toggle_2'></i>
+                    </span>
+                    <div class="py-1 px-7 text-gray-100 text-xl">
+                        <a href="/"><img class="w-20 h-20" src="/images/img/main_logo_1.png"></a>
+                    </div>
+                </div>
+                <span class="toggle_1 z-[60] block lg:hidden text-3xl text-gray-100 cursor-pointer mx-2">
+                    <ion-icon name="menu"></ion-icon>
+                </span>
+                <div class="hidden lg:flex justify-between w-1/2 transition-all ease-in duration-500">
+                    <div class=" space-x-10 text-gray-100">
+                        <a href="/" class="text-gray-100 font-semibold hover:text-gray-200">Home</a>
+                        <a href="#courses" class="text-gray-100 font-semibold hover:text-gray-200">Courses</a>
+                        <a href="#departments" class="text-gray-100 font-semibold hover:text-gray-200">Departments</a>
+                    </div>
+                    <div class="">
+                        <!-- <a class=" mx-2" href="/register">Sign up</a>|
+                        <a class=" mx-2" href="/login">Sign in</a> -->
+                    </div>
+                </div>           
+            </nav>
+            <div class="border border-gray-200 rounded mx-10 m-7">
+                <div class="flex h-auto">
+                    <div class=" w-full lg:w-2/3 border border-gray-200">
+                        <form action="/admin/addcourse" method="post" class="p-5">
+                            <p class="text-xl text-gray-700 text-center">Add a course so you can upload past questions later</p>
+                            <div class=" h-0.5 bg-gray-300 my-2 w-full"></div>
+                            <div class="m-3 my-6">
+                                <label class="block text-gray-700">Enter course name:</label>
+                                <input class="p-3 w-2/3 rounded outline-none border border-gray-300 focus:outline-gray-500" type="text" name="name" placeholder="course name..." required>
+                            </div>
+                            <div class="m-3 my-6">
+                                <label class="block text-gray-700">Enter course code:</label>
+                                <input style="text-transform: uppercase" class="p-3 w-2/3 rounded outline-none border border-gray-300 focus:outline-gray-500" type="text" name="code" placeholder="course code..." required>
+                            </div>
+                            <div class="select w-1/2 lg:w-5/12 ml-4 lg:ml-3 my-6 lg:my-0">
+                                <select name="level" id="format">
+                                   <option selected disabled>choose level</option>
+                                   <option value="l100">100</option>
+                                   <option value="l200">200</option>
+                                   <option value="l300">300</option>
+                                   <option value="l400">400</option>
+                                </select>
+                            </div>
+
+                            <div class="m-6">
+                                <p class="mb-5 text-lg text-gray-700">Select Departments that study this course:</p>
+                                <div class="form-group">
+                                    <input type="checkbox" name="cpen" id="cpen">
+                                    <label for="cpen">Computer Engineering</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="biomed" id="biomed">
+                                    <label for="biomed">Biomedical Engineering</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="agric" id="agric">
+                                    <label for="agric">Agricultural Engineering</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="materials" id="materials">
+                                    <label for="materials">Material science & Engineering</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="Food_Process" id="Food_Process">
+                                    <label for="Food_Process">Food Process Engineering</label>
+                                </div>
+                            </div>
+                            <input class="p-2 bg-primary border border-secondary rounded m-4 cursor-pointer text-white hover:bg-secondary" value="Add course" type="submit">
+                        </form>
+                    </div>
+                    <div class="hidden lg:block border border-gray-200 lg:w-1/3" style="background-image: linear-gradient(rgba(2, 7, 21, 0.138), rgba(6, 1, 11, 0.166)
+                    ), url('/images/img/bg-main.jpg'); background-position: center; background-size: cover;"></div>
+                </div>
+            </div>
+
+    
+        </section>   
+    </div>    
+    <script src="/js/script.js"></script>
+</body>
+</html>

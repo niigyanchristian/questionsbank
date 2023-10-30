@@ -1,0 +1,200 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="shortcut icon" type="image/png" href="/images/img/main_logo_1.png">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Boxicons CDN Link -->
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <title>QBank</title>
+</head>
+<body>
+    <div class="overflow-x-hidden">
+      <nav class="sidebar close border-r-2 border-gray-300 transition-all duration-300">
+        <header>
+            <div class="image-text">
+                <p class="m-5"><img class="w-10 h-10" src="/images/img/main_logo_1.png">Welcome </p>
+            </div>
+            <i class='bx bx-chevron-right toggle_2'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">                    
+                <ul class="menu-links">
+                    <li class="nav-link lg:hidden">
+                        <a href="/">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-link lg:hidden">
+                        <a href="#courses">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Courses</span>
+                        </a>
+                    </li>
+                    <li class="nav-link lg:hidden">
+                        <a href="#departments">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Departments</span>
+                        </a>
+                    </li>
+                    <div class="text-xs ml-5 text-gray-500 my-4 font-bold">Admin Privileges</div>
+                    <p class="text-sm ml-5 text-gray-500 my-4 font-bold">Login as admin</p>
+                    <li class="nav-link mt-28">
+                        <a href="/login">
+                            <i class='bx bxs-book-content icon'></i>
+                            <span class="text nav-text">Admin Login</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="/logout">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+            </div>
+        </div>
+
+      </nav>
+      <section class="home wrapper bg-black " id="blur">
+        <nav class="flex justify-between lg:justify-evenly absolute w-full align-middle items-center " >
+            <div class="py-1 px-7 text-gray-100 text-xl"><a href="./index.html"><img class="w-20 h-20" src="/images/img/main_logo_1.png"></a></div>
+            <span class="toggle_1 z-[60] block lg:hidden text-3xl text-gray-100 cursor-pointer mx-2">
+                <ion-icon name="menu"></ion-icon>
+            </span>
+            <div class="hidden lg:flex justify-between w-1/2 transition-all ease-in duration-500">
+                <div class=" space-x-10 text-gray-700">
+                    <a href="/" class="text-gray-100 font-semibold hover:text-primary">Home</a>
+                    <a href="#courses" class="text-gray-100 font-semibold hover:text-primary">Courses</a>
+                    <a href="#departments" class="text-gray-100 font-semibold hover:text-primary">Departments</a>
+                </div>
+            </div>           
+        </nav>
+        <div class="flex justify-center align-middle items-center md:items-start" style="background-image: linear-gradient(rgba(2, 7, 21, 0.609), rgba(6, 1, 11, 0.765)
+        ), url('/images/img/legon-premier.jpeg'); background-position: center; background-size: cover; height: 60vh;" >
+            <div class="w-4/5 md:w-[55%] mt-[10%]">
+                <div class=" text-white text-center text-3xl md:text-5xl" style="margin:20px 0;"><%=department%></div>
+                <div class="relative flex-col w-full sm:flex-row sm:justify-start sm:m-5">
+                <input type="search" id="searchInput" class="w-full p-4 focus:outline-none" placeholder="search books...">
+                <span style="top:0%; right:-3%; padding-top: 13px; padding-bottom: 13px" class="absolute hover:bg-secondtext-secondary cursor-pointer px-10 bg-primary"><i class=' bx bx-search text-3xl text-gray-100'></i></span>
+            
+                </div>
+            </div>
+        </div>
+        <div class=" mx-10">
+            <p class=" text-gray-700 my-10 mx-3 text-3xl font-semibold">Level 100</p>
+            <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3">
+            <% level100.forEach((course)=>{ %>
+            <div class="flex justify-between m-3 p-3 bg-primary hover:bg-secondary cursor-pointer" data-search="<%= course.name %>">
+                <a style="width: 90%;" class="flex justify-between" href="/courses/<%=course._id%>" >
+                <p style="white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                " class="mx-3 text-white text-xl"><%=course.name%></p>
+                </a>
+                <a style="width: 10%;" href="/courses/<%=course._id%>">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            </div>
+            <% }) %>
+            </div>
+        </div>
+
+        <div class=" mx-10">
+            <p class=" text-gray-700 my-10 mx-3 text-3xl font-semibold">Level 200</p>
+            <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3">
+            <% level200.forEach((course)=>{ %>
+                <div class="flex justify-between  m-3 p-3 bg-primary hover:bg-secondary cursor-pointer" data-search="<%= course.name %>">
+                    <a style="width: 90%;" class="flex justify-between" href="/courses/<%=course._id%>" >
+                    <p style="white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    " class="mx-3 text-white text-xl"><%=course.name%></p>
+                    </a>
+                    <a style="width: 10%;" href="/courses/<%=course._id%>">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+
+        <div class=" mx-10">
+            <p class=" text-gray-700 my-10 mx-3 text-3xl font-semibold">Level 300</p>
+            <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3">
+            <% level300.forEach((course)=>{ %>
+                <div class="flex justify-between m-3 p-3 bg-primary hover:bg-secondary cursor-pointer" data-search="<%= course.name %>">
+                    <a style="width: 90%;" class="flex justify-between" href="/courses/<%=course._id%>" >
+                    <p style="white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    " class="mx-3 text-white text-xl"><%=course.name%></p>
+                    </a>
+                    <a style="width: 10%;" href="/courses/<%=course._id%>">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+
+        <div class=" mx-10">
+            <p class=" text-gray-700 my-10 mx-3 text-3xl font-semibold">Level 400</p>
+            <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3">
+            <% level400.forEach((course)=>{ %>
+                <div class="flex justify-between m-3 p-3 bg-primary hover:bg-secondary cursor-pointer" data-search="<%= course.name %>">
+                    <a style="width: 90%;" class="flex justify-between" href="/courses/<%=course._id%>" >
+                    <p style="white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    " class="mx-3 text-white text-xl"><%=course.name%></p>
+                    </a>
+                    <a style="width: 10%;" href="/courses/<%=course._id%>">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        <%-include('partials/footer')%>
+    </section>
+    </div>
+  
+<!-- <script>
+  function Menu(e){
+  let list = document.querySelector('.hamburger_menu');
+  e.name === 'menu' ? (e.name = "close",list.classList.remove('top-[-340px]'),list.classList.add('top-[68px]')) :( e.name = "menu" ,list.classList.add('top-[-340px]'))
+}
+</script> -->
+<script src="/js/search1.js"></script>
+<script>
+  const body = document.querySelector('body'),
+  sidebar = body.querySelector('nav'),
+  toggle_1 = body.querySelector(".toggle_1"),
+  toggle_2 = body.querySelector(".toggle_2");
+    console.log(toggle_1,toggle_2)
+
+  toggle_1.addEventListener("click" , () =>{
+    console.log(1111)
+    
+    console.log(2222,sidebar.classList.toggle("close"));
+  });
+
+  toggle_2.addEventListener("click" , () =>{
+      sidebar.classList.toggle("close");
+  });
+
+</script>
+</body>
+</html>
