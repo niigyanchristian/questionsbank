@@ -41,8 +41,8 @@ exports.registerUser = async (req,res)=>{
     console.log(password,username)
     User.register({username:username}, password, (err,user)=>{
         if(err){
-            console.log("error occured whiles registering a user",err.message);
-            res.redirect('/login?err=regerr');
+            // console.log("error occured whiles registering a user",err.message);
+            res.send("error occured whiles registering a user"+err.message);
         }else{
             passport.authenticate("local")(req,res,async ()=>{
                 const userStatus =await User.findOne({username:username});

@@ -32,24 +32,24 @@ iconClose.addEventListener('click',()=>{
 
 
 
-////////////////////////////////////////////////////////
-document.getElementById("myForm").addEventListener("submit", function (event) {
-    event.preventDefault();
+// ////////////////////////////////////////////////////////
+// document.getElementById("myForm").addEventListener("submit", function (event) {
+//     // event.preventDefault();
 
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
-    // const errorText = document.getElementById("errorText");
+//     const password = document.getElementById("password").value;
+//     const confirmPassword = document.getElementById("confirmPassword").value;
+//     // const errorText = document.getElementById("errorText");
 
-    if (password !== confirmPassword) {
-    //   errorText.textContent = "Passwords do not match!";
-    alert("Passwords do not match!")
-    } else {
-      // Clear the error message if passwords match
-    //   errorText.textContent = "";
-    }
+//     if (password !== confirmPassword) {
+//     //   errorText.textContent = "Passwords do not match!";
+//     alert("Passwords do not match!")
+//     } else {
+//       // Clear the error message if passwords match
+//     //   errorText.textContent = "";
+//     }
 
-      fetch('/register', {
-        method: 'POST',
-        body: new URLSearchParams(new FormData(document.getElementById("myForm")))
-      })
-})
+//       fetch('/register', {
+//         method: 'POST',
+//         body: new URLSearchParams(new FormData(document.getElementById("myForm")))
+//       })
+// })
