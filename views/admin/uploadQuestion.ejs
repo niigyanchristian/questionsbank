@@ -98,7 +98,7 @@
                         <i class='bx bx-chevron-right toggle_2'></i>
                     </span>
                     <div class="py-5 px-7 text-gray-100 text-xl">
-                        <a href="/"><img class="w-10 h-10" src="images/img/main_logo_1.png"></a>
+                        <a href="/"><img class="w-10 h-10" src="/images/img/main_logo_1.png"></a>
                     </div>
                 </div>
                 <span class="toggle_1 z-[60] block lg:hidden text-3xl text-gray-800 cursor-pointer mx-2">
@@ -122,11 +122,7 @@
                         <form enctype="multipart/form-data" action="/admin/addpasco" method="post" class="p-5">
                             <p class="text-xl text-gray-700 text-center">Upload question so students can access.</p>
                             <div class=" h-0.5 bg-gray-300 my-2 w-full"></div>
-                            <div class="m-3 my-6">
-                                <label class="block text-gray-700">Enter course name:</label>
-                                <input required name="name" class="p-2 w-2/3 rounded outline-none border border-gray-300 focus:outline-gray-500" type="text" placeholder="course name...">
-                            </div>
-                            
+                            <label class="block mx-5 text-gray-700">Select course code:</label>
                             <div class="select w-1/2 lg:w-5/12 ml-4 lg:ml-3 my-6 lg:my-0">
                                 <select name="code" id="format">
                                    <option selected disabled>course code</option>
@@ -137,6 +133,12 @@
                                 </select>
                             </div>
                             <div class="m-3 my-6">
+                                <label class="block text-gray-700">Enter course name:</label>
+                                <input required name="name" class="p-2 w-2/3 rounded outline-none border border-gray-300 focus:outline-gray-500" type="text" placeholder="course name...">
+                            </div>
+                            
+                            
+                            <div class="m-3 my-6">
                                 <label class="block text-gray-700">Enter Examiner's name:</label>
                                 <input name="examiner" class="p-2 w-1/3 rounded outline-none border border-gray-300 focus:outline-gray-500" type="text" placeholder="Dr/Mr... examiner">
                             </div>
@@ -145,7 +147,7 @@
                                 <input required name="year" class="p-2 w-1/3 rounded outline-none border border-gray-300 focus:outline-gray-500" type="text" placeholder="2016...">
                             </div>
                             <div class="select w-1/2 lg:w-5/12 ml-4 lg:ml-3 my-6 lg:my-0">
-                                <select name="semester" id="format">
+                                <select name="semester" >
                                    <option selected value="1st">1st Semester</option>
                                    <option value="2nd">2nd Semester</option>
                                 </select>
@@ -166,5 +168,23 @@
         </section>   
     </div>    
     <script src="/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add change event listener to the course code select
+            $('#format').change(function () {
+                // Get the selected course code
+                var selectedCode = $(this).val();
+    
+                // Loop through courses to find the matching course name
+                <% courses.forEach((course) => { %>
+                    if ("<%=course.code%>" === selectedCode) {
+                        // Set the course name input value
+                        $('input[name="name"]').val("<%=course.name%>");
+                    }
+                <% }) %>
+            });
+        });
+    </script>
 </body>
 </html>

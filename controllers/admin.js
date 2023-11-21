@@ -77,7 +77,7 @@ exports.getAddPasco = async (req,res)=>{
         try {
             
             const userDetails = getLocalStorage(req);
-            const courses= await Course.find({},'code');
+            const courses= await Course.find({},['code','name']);
             userDetails.admin ? res.render('admin/uploadQuestion',{courses}) : res.redirect('/');
         
         } catch (error) {
